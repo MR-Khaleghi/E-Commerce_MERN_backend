@@ -7,9 +7,9 @@ import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import uploadRouter from './routes/uploadRoute.js';
 import path from 'path';
-
+const MONGODB_URL = process.env.MONGODB_URL;
 mongoose
-  .connect('mongodb://localhost/ecommerce')
+  .connect(MONGODB_URL)
   .then(() => console.log('connected mongo'))
   .catch((err) => console.log("coudn't connect to mongo"));
 
